@@ -451,11 +451,6 @@ def main(WIN, WIDTH):
 
 
 main(WIN, WIDTH)
-If I were to explain the entirety of the code, this would take hours on hours to write so I am going to explain the functions and any complex concepts which may be in them and leave you to solve out the rest.
-
-Code Explanation:
-
-We used pygame to write this program since it can easily give us the interface and I have experience from my A* algorithm on how to make a grid so most of the grid is just recycled code from that.
 
 board = [['  ' for i in range(8)] for i in range(8)]
 
@@ -525,9 +520,6 @@ def create_board(board):
         board[1][i] = Piece('b', 'p', 'b_pawn.png')
         board[6][i] = Piece('w', 'p', 'w_pawn.png')
     return board
-Except from the starting order dict, all of this was edwins code and all of it used for the move calculations. Theoretically you could have done this with only one of either a dictionary or a 2d list like he has done but since we both needed access to an array for our parts while we were coding and we couldn’t share a python script, we made our own versions. Edwin makes a class for the pieces since it is easier to manage and at the bottom he is setting up his 2d list so all the pieces are in their starting positions. In my dictionary, I hard wrote all the positions automatically since I needed to put the name of each of the individual image files into the load. pygame.image.load() is going to load an image onto the python file and then we only need to draw the image onto the screen. It is better this way than loading the image and then drawing because it means we only need to load the image once for the entire program and then just translate this image onto new positions on the screen.
-
-The rest of edwins code is pretty self-explanatory and is just choosing the correct positions that each piece can move to and then putting those ‘legal’ tiles on the chessboard for us to use on the interface as a way of highlighting the board.
 
 WIDTH = 800
 
